@@ -26,8 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [job1]
     environment:
-      name: prod
-      url: https://${{github.sha}}.domainas.lt
+      name: stage
+      url: https://${{github.sha}}-stage.domainas.lt
     steps:
       - name: Step 1
         run: echo "Step 1 ${GITHUB_SHA}"
@@ -38,5 +38,5 @@ jobs:
     needs: [job3]
     if: failure()
     steps:
-    - name: Step 3
+    - name: Step 1
       run: echo "Rolling back ${GITHUB_SHA}"
