@@ -24,7 +24,7 @@ jobs:
     needs: [job1]
     environment:
       name: prod
-      url: https://${GITHUB_SHA}.domainas.lt
+      url: https://${{GITHUB_SHA}}${{github.sha}}.domainas.lt
     steps:
       - name: Step 1
         run: echo "Step 1 ${GITHUB_SHA}"
